@@ -5,20 +5,23 @@
  */
 
 import { Container, Section, SectionTitle } from '../ui';
-import { useIntersectionObserver } from '../../hooks';
+import { useIntersectionObserver, useLanguage } from '../../hooks';
 import { projects } from '../../data';
 import { ProjectCard } from './ProjectCard';
+import { translations } from '../../data';
 import './Projects.css';
 
 export function Projects() {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <Section id="projects" className={`projects ${isVisible ? 'visible' : ''}`} ref={ref}>
       <Container>
         <SectionTitle
-          title="Featured Projects"
-          subtitle="A selection of my recent work and side projects"
+          title={t.projectsTitle}
+          subtitle={t.projectsSubtitle}
         />
 
         <div className="projects-grid">

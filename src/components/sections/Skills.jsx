@@ -5,12 +5,16 @@
  */
 
 import { Container, Section, SectionTitle, Tag } from '../ui';
-import { useIntersectionObserver } from '../../hooks';
+import { useIntersectionObserver, useLanguage } from '../../hooks';
 import { skills } from '../../data';
+import { translations } from '../../data';
+import localize from '../../utils/i18n';
 import './Skills.css';
 
 export function Skills() {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const { language } = useLanguage();
+  const t = translations[language];
 
   // Group skills by category
   const groupedSkills = skills.reduce((acc, skill) => {
@@ -25,8 +29,8 @@ export function Skills() {
     <Section id="skills" className={`skills ${isVisible ? 'visible' : ''}`} ref={ref}>
       <Container>
         <SectionTitle
-          title="Technical Skills"
-          subtitle="Technologies and tools I work with"
+          title={t.skills}
+          subtitle={t.technology}
         />
 
         <div className="skills-grid">
@@ -36,14 +40,14 @@ export function Skills() {
               className="skill-category"
               style={{ transitionDelay: `${categoryIndex * 50}ms` }}
             >
-              <h3 className="skill-category-title">{category}</h3>
+              <h3 className="skill-category-title">{t.categories?.[category] ?? category}</h3>
               <div className="skill-tags">
                 {categorySkills.map((skill, skillIndex) => (
                   <Tag
                     key={skill.id}
                     style={{ transitionDelay: `${categoryIndex * 50 + skillIndex * 30}ms` }}
                   >
-                    {skill.name}
+                    {localize(skill.name, language)}
                   </Tag>
                 ))}
               </div>

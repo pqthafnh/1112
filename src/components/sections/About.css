@@ -75,7 +75,7 @@
   background: var(--gradient-primary);
   background-clip: text;
   -webkit-background-clip: text;
-  color: #ffffff;;
+  color: var(--text-primary);
   margin-bottom: var(--space-md);
 
 }
@@ -83,7 +83,7 @@
 .highlight-label {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
-  color: #ffffff83;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }

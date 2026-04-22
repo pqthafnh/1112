@@ -7,11 +7,18 @@
  *  - index: item index
  */
 
-import { useIntersectionObserver } from '../../hooks';
+import { useIntersectionObserver, useLanguage } from '../../hooks';
+import { translations } from '../../data';
+import localize from '../../utils/i18n';
 import './TimelineItem.css';
 
 export function TimelineItem({ experience, index }) {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.2 });
+  const { language } = useLanguage();
+  const t = translations[language];
+  const role = localize(experience.role, language);
+  const company = localize(experience.company, language);
+  const description = localize(experience.description, language);
 
   return (
     <div
@@ -22,15 +29,15 @@ export function TimelineItem({ experience, index }) {
       <div className="timeline-marker"></div>
 
       <div className="timeline-content">
-        <h3 className="timeline-role">{experience.role}</h3>
-        <p className="timeline-company">{experience.company}</p>
+        <h3 className="timeline-role">{role}</h3>
+        <p className="timeline-company">{company}</p>
 
         <div className="timeline-meta">
           <span className="timeline-period">{experience.period}</span>
-          {experience.location && <span className="timeline-location">{experience.location}</span>}
+          {experience.location && <span className="timeline-location">{localize(experience.location, language)}</span>}
         </div>
 
-        <p className="timeline-description">{experience.description}</p>
+        <p className="timeline-description">{description}</p>
 
         {(experience.github || experience.figma) && (
           <div className="timeline-links">
@@ -42,7 +49,7 @@ export function TimelineItem({ experience, index }) {
                 className="timeline-link github-link"
               >
                 <span className="link-icon">📁</span>
-                GitHub
+                {t.githubLabel}
               </a>
             )}
             {experience.figma && (
@@ -53,7 +60,7 @@ export function TimelineItem({ experience, index }) {
                 className="timeline-link figma-link"
               >
                 <span className="link-icon">🎨</span>
-                Figma
+                {t.figmaLabel}
               </a>
             )}
           </div>

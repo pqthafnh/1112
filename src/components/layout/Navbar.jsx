@@ -13,22 +13,23 @@
  */
 
 import { useState } from 'react';
-import { useActiveSection, useMediaQuery } from '../../hooks';
+import { useActiveSection, useMediaQuery, useLanguage } from '../../hooks';
 import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
+import { translations } from '../../data/translations';
 import './Navbar.css';
-
-const NAV_ITEMS = [
-  { label: 'About', href: 'about' },
-  { label: 'Skills', href: 'skills' },
-  { label: 'Projects', href: 'projects' },
-  { label: 'Experience', href: 'experience' },
-  { label: 'Education', href: 'education' },
-  { label: 'Contact', href: 'contact' },
-];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const { language } = useLanguage();
+  
+  const navLabels = translations[language]?.nav || translations.vi.nav;
+  const NAV_ITEMS = navLabels.map((label, index) => ({
+    label,
+    href: ['about', 'skills', 'projects', 'experience', 'education', 'contact'][index] || 'about'
+  }));
+  
   const activeSection = useActiveSection(['hero', ...NAV_ITEMS.map((item) => item.href)]);
 
   const handleNavClick = (href) => {
@@ -71,8 +72,9 @@ export function Navbar() {
           </div>
         )}
 
-        {/* Theme Toggle */}
+        {/* Theme Toggle & Language Toggle */}
         <div className="navbar-end">
+          <LanguageToggle />
           <ThemeToggle />
 
           {/* Mobile Menu Button */}

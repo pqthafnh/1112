@@ -8,4 +8,5 @@ export { skills } from './skills';
 export { projects } from './projects';
 export { experiences } from './experience';
 export { education } from './education';
-export { certifications } from './certifications';
+export { certifications } from './certifications'; 
+export { translations } from './translations';

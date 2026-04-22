@@ -5,24 +5,26 @@
  */
 
 import { Container, Section, SectionTitle } from '../ui';
-import { useIntersectionObserver } from '../../hooks';
-import { siteConfig } from '../../data';
+import { useIntersectionObserver, useLanguage } from '../../hooks';
+import { translations } from '../../data';
 import './About.css';
 
 export function About() {
   const [ref, isVisible] = useIntersectionObserver({ threshold: 0.1 });
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <Section id="about" className={`about ${isVisible ? 'visible' : ''}`} ref={ref}>
       <Container>
         <SectionTitle
-          title="About Me"
-          subtitle="Get to know who I am and what drives my passion"
+          title={t.aboutTitle}
+          subtitle={t.about}
         />
 
         <div className={`about-content ${isVisible ? 'fade-in' : 'fade-up'}`}>
           <div className="about-text">
-            {siteConfig.about.split('\n\n').map((paragraph, index) => (
+            {t.aboutContent.split('\n\n').map((paragraph, index) => (
               <p key={index} className="about-paragraph">
                 {paragraph}
               </p>

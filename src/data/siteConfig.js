@@ -6,28 +6,29 @@
  */
 
 export const siteConfig = {
-  // Personal Information (from CV)
-  name: 'PHAM QUANG THANH',
-  role: 'Bachelor of Information Technology — Software Engineering',
-  bio: 'Software engineer focused on web & UX/UI, technical documentation, and full-stack development. Experienced with React, Move (SUI), Flutter, and product-focused design.',
+  // Thông tin cá nhân (từ CV)
+  name: 'PHẠM QUANG THÀNH',
+  role: 'Cử nhân Công nghệ Thông tin — Kỹ sư Phần mềm',
+  bio: 'Kỹ sư phần mềm tập trung vào web & UX/UI, tài liệu kỹ thuật, và phát triển full-stack. Có kinh nghiệm với React, Move (SUI), Flutter, và thiết kế tập trung vào sản phẩm.',
   email: 'phamquangthanh1113@gmail.com',
-  avatar: '/assets/avatar.jpg', // drop your portrait at public/assets/avatar.jpg
+  avatar: '/assets/1.jpg', // đặt ảnh chân dung tại public/assets/avatar.jpg
 
-  // Long-form About section text (condensed from CV)
-  about: `I am a Software Engineering student at Gia Dinh University (CGPA 3.67/4.0). I build web applications, design UX/UI, and implement smart-contract–backed features using modern stacks including React, Move (SUI), and Flutter. I contribute to open-source and volunteer projects, focusing on clear technical documentation and product-driven implementations.
+  // Phần giới thiệu dài (tóm tắt từ CV)
+  about: `Tôi là sinh viên ngành Kỹ thuật Phần mềm tại Đại học Gia Định (CGPA 3.67/4.0). Tôi xây dựng ứng dụng web, thiết kế UX/UI, và triển khai các tính năng được hỗ trợ bởi hợp đồng thông minh bằng cách sử dụng các stack hiện đại bao gồm React, Move (SUI), và Flutter. Tôi đóng góp cho các dự án mã nguồn mở và tình nguyện, tập trung vào tài liệu kỹ thuật rõ ràng và triển khai tập trung vào sản phẩm.
 
-During my projects I combine interface design with robust engineering—creating intuitive user experiences while delivering maintainable code. My experience includes hackathon-built dApps on SUI, volunteer web development for non-profits, and collaborative innovation projects at university.
+Trong các dự án của tôi, tôi kết hợp thiết kế giao diện với kỹ thuật vững chắc—tạo ra trải nghiệm người dùng trực quan đồng thời cung cấp mã có thể bảo trì. Kinh nghiệm của tôi bao gồm các dApp được xây dựng tại hackathon trên SUI, phát triển web tình nguyện cho các tổ chức phi lợi nhuận, và các dự án đổi mới hợp tác tại trường đại học.
 
-I am actively seeking opportunities to apply full-stack and blockchain skills in practical product teams.`,
+Tôi đang tích cực tìm kiếm cơ hội để áp dụng kỹ năng full-stack và blockchain trong các đội ngũ sản phẩm thực tế.`,
 
-  // Social Links (from CV)
+  // Liên kết mạng xã hội (từ CV)
   social: {
     github: 'https://github.com/pqthafnh',
     figma: 'https://www.figma.com/@pqthafnh',
     email: 'mailto:phamquangthanh1113@gmail.com',
-    github: "https://github.com/pqthafnh", linkedin: "https://www.linkedin.com/in/thành-phạm-b717993a7", Facebook: "https://www.facebook.com/ThanhPahm.1112" 
+    linkedin: 'https://www.linkedin.com/in/thành-phạm-b717993a7',
+    Facebook: 'https://www.facebook.com/ThanhPahm.1112'
   },
 
   // Navigation sections (also used in navbar)
-  nav: ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'],
+  nav: ['Giới thiệu', 'Kỹ năng', 'Dự án', 'Kinh nghiệm', 'Học vấn', 'Liên hệ'],
 };

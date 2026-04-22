@@ -107,6 +107,9 @@
   border-radius: calc(var(--radius-md) + 2px);
 }
 
+.light .btn-primary {
+  background: var(--gradient-primary);
+}
 /* ===== DARK MODE ===== */
 
 .dark .btn-primary {

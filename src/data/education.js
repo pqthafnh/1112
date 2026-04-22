@@ -7,19 +7,19 @@
 export const education = [
   {
     id: 1,
-    degree: 'Bachelor of Information Technology — Software Engineering',
-    institution: 'Gia Dinh University',
+    degree: { vi: 'Cử nhân Công nghệ Thông tin — Kỹ thuật Phần mềm', en: 'Bachelor of Information Technology — Software Engineering' },
+    institution: { vi: 'Đại học Gia Định', en: 'Gia Dinh University' },
     gpa: '3.67 / 4.0',
     startYear: 2025,
-    endYear: 'Present',
-    status: 'Current',
+    endYear: 'present',
+    status: 'ongoing',
   },
   {
     id: 2,
-    degree: 'High School Diploma',
-    institution: 'Nguyen An Ninh High School',
+    degree: { vi: 'Bằng Tốt nghiệp Trung học Phổ thông', en: 'High School Diploma' },
+    institution: { vi: 'Trường Trung học Phổ thông Nguyễn An Ninh', en: 'Nguyen An Ninh High School' },
     startYear: 2022,
     endYear: 2025,
-    status: 'Graduated',
+    status: 'graduated',
   },
 ];

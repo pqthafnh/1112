@@ -173,3 +173,38 @@
     align-self: flex-start;
   }
 }
+
+/* ===== Thank-you Modal ===== */
+.thankyou-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 24px;
+}
+
+.thankyou-modal {
+  background: var(--surface);
+  border-radius: 12px;
+  padding: 22px;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(2,6,23,0.25);
+  border: 1px solid var(--border);
+  text-align: center;
+  transform: translateY(-8px);
+  opacity: 0;
+  animation: modalIn 220ms ease forwards;
+}
+
+@keyframes modalIn {
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.thankyou-modal h3 { margin: 0 0 8px; font-size: 20px; color: var(--text-primary); }
+.thankyou-modal p { color: var(--text-secondary); margin: 6px 0; }
+.modal-email { font-family: 'SF Mono','Fira Code',monospace; color: var(--text-primary); display:inline-block; margin-top:6px; }
+.modal-actions { display:flex; gap:12px; justify-content:center; margin-top:16px; }

@@ -15,7 +15,7 @@ export function Footer() {
           © {currentYear} Phạm Quang Thành - Software Engineer.
         </p>
         <p className="footer-built">
-          Contact with me: phamquangthanh@1113gmail.com <span className="footer-heart">🐢</span>
+          Contact with me: phamquangthanh1113@gmail.com <span className="footer-heart">🐢</span>
         </p>
       </div>
     </footer>

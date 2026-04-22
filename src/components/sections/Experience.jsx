@@ -7,15 +7,20 @@
 import { Container, Section, SectionTitle } from '../ui';
 import { experiences } from '../../data';
 import { TimelineItem } from './TimelineItem';
+import { useLanguage } from '../../hooks';
+import { translations } from '../../data';
 import './Experience.css';
 
 export function Experience() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <Section id="experience">
       <Container>
         <SectionTitle
-          title="Work Experience"
-          subtitle="My professional journey and roles"
+          title={t.experienceTitle}
+          subtitle={t.experienceSubtitle}
         />
 
         <div className="experience-timeline">

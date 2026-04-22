@@ -121,7 +121,9 @@
   display: flex;
   gap: var(--space-lg);
   flex-wrap: wrap;
+  color: #095d26;
 }
+
 
 /* Tech Stack Section */
 .hero-tech-stack {
@@ -145,18 +147,18 @@
 .tech-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .tech-tag {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, var(--surface) 0%, rgba(250, 250, 250, 0.4) 100%);
+  gap: 0.3rem;           /* giảm gap */
+  padding: 0.15rem 0.5rem; /* giảm padding trên dưới, trái phải vừa phải */
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: var(--font-size-sm);
+  border-radius: 4px;     /* giữ bo nhẹ */
+  font-size: 14px;        /* giảm 1px */
   font-weight: var(--font-weight-medium);
   color: var(--text-primary);
   transition: all var(--transition-normal) var(--easing-standard);
@@ -174,9 +176,14 @@
 }
 
 .tech-icon {
-  display: inline-block;
-  font-size: 1rem;
-  animation: spin 3s linear infinite;
+    font-size: 20px;
+    animation: 3s linear infinite spin;
+    display: inline-block;
+}
+.tech-name {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
 }
 
 .tech-tag:hover .tech-icon {
@@ -256,12 +263,12 @@
   }
 
   .tech-tags {
-    gap: var(--space-sm);
+    gap: var(--space-xs);
   }
 
   .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem;
+    font-size: 11px;
+    padding: 0.25rem 0.5rem;
   }
 
   .hero-avatar {
