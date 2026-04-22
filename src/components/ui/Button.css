@@ -1,0 +1,136 @@
+/**
+ * Button Component Styles
+ * Implements three variants: primary, secondary, ghost
+ * Supports two sizes: md, lg
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast) var(--easing-standard);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  gap: var(--space-md);
+}
+
+/* ===== SIZES ===== */
+
+.btn-md {
+  padding: 12px 24px;
+  font-size: var(--font-size-base);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: var(--font-size-lg);
+}
+
+/* ===== PRIMARY VARIANT ===== */
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: rgb(255, 255, 255);
+  box-shadow: 0 6px 18px rgba(14, 123, 78, 0.12);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--gradient-primary-hover);
+  box-shadow: 0 18px 40px rgba(14, 123, 78, 0.12);
+  transform: translateY(-3px) scale(1.01);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ===== SECONDARY VARIANT ===== */
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid rgba(14,123,78,0.12);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(14, 123, 78, 0.06);
+  border-color: rgba(14,123,78,0.18);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ===== GHOST VARIANT ===== */
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* ===== DISABLED STATE ===== */
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Slight focus ring tuned for accessibility and refinement */
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(16,185,129,0.14);
+  border-radius: calc(var(--radius-md) + 2px);
+}
+
+/* ===== DARK MODE ===== */
+
+.dark .btn-primary {
+  background: var(--gradient-primary);
+}
+
+.dark .btn-primary:hover:not(:disabled) {
+  background: var(--gradient-primary-hover);
+}
+
+.dark .btn-secondary {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.dark .btn-secondary:hover:not(:disabled) {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.dark .btn-ghost {
+  color: var(--text-secondary);
+}
+
+.dark .btn-ghost:hover:not(:disabled) {
+  background: var(--surface);
+  color: var(--primary);
+}

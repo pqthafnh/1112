@@ -1,0 +1,72 @@
+/**
+ * SectionTitle Component Styles
+ * Accent bar and typography for section headers
+ */
+
+.section-title {
+  margin-bottom: var(--space-5xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title-center {
+  text-align: center;
+}
+
+.section-title-left {
+  text-align: left;
+  align-items: flex-start;
+}
+
+.section-title-accent {
+  width: 64px;
+  height: 6px;
+  background: linear-gradient(90deg, rgba(14,123,78,0.95) 0%, rgba(201,163,74,0.6) 100%);
+  border-radius: 4px;
+  margin-bottom: var(--space-lg);
+  box-shadow: 0 6px 20px rgba(14,123,78,0.06);
+}
+
+.section-title-text {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.section-title-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 600px;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Subtle paper texture under titles for editorial feel */
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 60px;
+  background: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.6), transparent 20%),
+              linear-gradient(180deg, rgba(0,0,0,0.02), transparent 40%);
+  opacity: 0.06;
+  transform: translateY(18px);
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  .section-title {
+    margin-bottom: var(--space-4xl);
+  }
+
+  .section-title-text {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-title-subtitle {
+    font-size: var(--font-size-base);
+  }
+}

@@ -1,0 +1,17 @@
+/**
+ * Section Component Styles
+ * Defines vertical padding for sections (96px desktop, 64px mobile)
+ */
+
+.section {
+  padding-top: var(--space-5xl);
+  padding-bottom: var(--space-5xl);
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+}

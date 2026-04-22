@@ -1,0 +1,165 @@
+/**
+ * Design System: CSS Variables
+ * Single source of truth for colors, typography, spacing, and animations
+ * Supports light and dark modes with .dark class toggle
+ */
+
+:root {
+  /* ===== COLOR SYSTEM ===== */
+  --primary: #0E7B4E;
+  --primary-light: #D6F5E8;
+  --primary-dark: #064E3B;
+
+  --secondary: #111827;
+
+  --background: #FFFFFF;
+  --surface: #F8FAFB;
+  --surface-2: #F3F4F6;
+
+  --text-primary: #0B1220;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
+
+  --border: #E6E9EE;
+  --border-light: #F1F3F6;
+
+  --accent: #C9A34A;
+  --accent-light: #FBBF24;
+
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-family-heading: 'Merriweather', 'Georgia', serif;
+
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 22px;
+  --font-size-2xl: 28px;
+  --font-size-3xl: 36px;
+  --font-size-4xl: 64px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.08;
+  --line-height-snug: 1.2;
+  --line-height-normal: 1.45;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+
+  /* ===== SPACING SCALE ===== */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+  --space-5xl: 96px;
+  --space-6xl: 128px;
+
+  /* ===== SIZING ===== */
+  --container-max-width: 1200px;
+  --container-padding: 24px;
+  --container-padding-sm: 16px;
+
+  /* ===== RADIUS ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ===== SHADOWS (refined for a mature look) ===== */
+  --shadow-sm: 0 1px 3px rgba(12, 20, 30, 0.05);
+  --shadow-md: 0 6px 18px rgba(12, 20, 30, 0.08);
+  --shadow-lg: 0 18px 40px rgba(12, 20, 30, 0.12);
+  --shadow-xl: 0 30px 60px rgba(12, 20, 30, 0.16);
+  --shadow-2xl: 0 40px 90px rgba(12, 20, 30, 0.24);
+
+  /* ===== GRADIENTS ===== */
+  --gradient-primary: linear-gradient(135deg, rgba(14, 123, 78, 0.12) 0%, rgba(75, 75, 75, 0.04) 100%);
+  --gradient-primary-hover: linear-gradient(135deg, rgba(16,185,129,1) 0%, rgba(30,30,30,0.95) 90%);
+  --gradient-subtle: linear-gradient(135deg, rgba(14, 123, 78, 0.08), rgba(26, 26, 26, 0.03));
+
+  --hightlight-item-number: color: #fff;
+  --highlight-item-label: color: #fff;
+
+  
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 150ms var(--easing-standard);
+  --transition-normal: 260ms var(--easing-standard);
+  --transition-slow: 420ms var(--easing-standard);
+  --easing-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ===== Z-INDEX SCALE ===== */
+  --z-dropdown: 100;
+  --z-sticky: 60;
+  --z-fixed: 50;
+  --z-modal-backdrop: 200;
+  --z-modal: 210;
+
+  /* ===== BREAKPOINTS (for reference) ===== */
+  /* sm: 640px, md: 768px, lg: 1024px, xl: 1200px */
+}
+
+/* ===== DARK MODE OVERRIDES ===== */
+.dark {
+  /* Primary Green Palette - Brighter in dark mode */
+  --primary: #10B981;
+  --primary-light: #064E3B;
+  --primary-dark: #059669;
+
+  /* Secondary (inverted) */
+  --secondary: #F9FAFB;
+
+  /* Background & Surface (inverted) */
+  --background: #0A0C0F;
+  --surface: #13171A;
+  --surface-2: #1F2937;
+
+  /* Text Colors (inverted) */
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-tertiary: #6B7280;
+
+  /* Border & UI */
+  --border: #1F2937;
+  --border-light: #2D3748;
+
+  /* Accent (adjusted for dark) */
+  --accent: #F59E0B;
+  --accent-light: #FBBF24;
+
+  /* Gradient adjusted for dark mode */
+  --gradient-primary: linear-gradient(135deg, #0aaa3aad 0%, #ffffff00 100%);
+  --gradient-primary-hover: linear-gradient(135deg, #05966800 0%, #e5e7eb00 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(243, 244, 246, 0.05));
+}
+
+/* ===== RESPONSIVE TYPOGRAPHY (Mobile-First) ===== */
+@media (max-width: 640px) {
+  :root {
+    --font-size-4xl: 40px;
+    --font-size-3xl: 28px;
+    --container-padding: 16px;
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,33 @@
+/**
+ * Tag Component Styles
+ * Pill-shaped badges with primary light background
+ */
+
+.tag {
+  display: inline-block;
+  background-color: var(--primary-light);
+  color: var(--primary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  transition: all var(--transition-fast) var(--easing-standard);
+}
+
+.tag:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* ===== DARK MODE ===== */
+
+.dark .tag {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.dark .tag:hover {
+  background-color: var(--primary);
+  color: white;
+}

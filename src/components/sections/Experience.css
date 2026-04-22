@@ -1,0 +1,10 @@
+/**
+ * Experience Section Styles
+ */
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  max-width: 700px;
+}

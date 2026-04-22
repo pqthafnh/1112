@@ -1,0 +1,29 @@
+/**
+ * Legacy index.css - Styles Managed Elsewhere
+ * 
+ * This file is no longer used. All styles are now organized as follows:
+ * 
+ * 1. /styles/variables.css
+ *    - CSS custom properties (colors, typography, spacing, etc.)
+ *    - Design tokens for light and dark mode
+ *    - Responsive breakpoints
+ * 
+ * 2. /styles/animations.css
+ *    - Animation keyframes
+ *    - Transition utilities
+ *    - Interaction states
+ * 
+ * 3. /styles/global.css
+ *    - Reset and foundational styles
+ *    - Base typography
+ *    - Container and layout helpers
+ * 
+ * 4. Component-specific CSS files
+ *    - Located next to each component
+ *    - Scoped to component scope
+ *    - Example: /components/ui/Button.css
+ * 
+ * All styles are imported in App.jsx and automatically applied
+ * when the application renders.
+ */
+

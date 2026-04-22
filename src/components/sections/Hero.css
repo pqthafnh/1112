@@ -1,0 +1,304 @@
+/**
+ * Hero Section Styles
+ */
+
+.hero {
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-5xl);
+}
+
+.hero-decoration {
+  position: absolute;
+  border-radius: 8px;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+.hero-decoration-1 {
+  width: 560px;
+  height: 380px;
+  right: -160px;
+  top: -80px;
+  background: linear-gradient(135deg, rgba(14,123,78,0.14), rgba(201,163,74,0.06));
+  filter: blur(36px) saturate(110%);
+}
+
+.hero-decoration-2 {
+  width: 420px;
+  height: 260px;
+  left: -120px;
+  bottom: -90px;
+  background: linear-gradient(135deg, rgba(201,163,74,0.06), rgba(14,123,78,0.04));
+  filter: blur(36px);
+}
+
+.hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-3xl);
+  align-items: center;
+  /* Visible by default for resilience; animate when observer toggles .visible */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero.visible .hero-content {
+  animation: slideUp var(--transition-slow) var(--easing-standard) both;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.hero-greeting {
+  font-family: var(--font-family-base);
+  color: var(--text-secondary);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-title {
+  font-family: var(--font-family-heading);
+  font-size: calc(var(--font-size-4xl) + 4px);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+  color: var(--text-primary);
+  letter-spacing: var(--letter-spacing-tight);
+  animation: slideUp var(--transition-slow) var(--easing-standard);
+}
+
+
+.text-gradient {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.hero-role {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  color: #095d26;
+  margin: 0;
+  font-style: italic;
+}
+
+
+.hero-bio {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-width: 640px;
+  margin: 0;
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+/* Tech Stack Section */
+.hero-tech-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  animation: slideUp var(--transition-slow) var(--easing-standard) 0.3s both;
+}
+
+.tech-stack-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(250, 250, 250, 0.4) 100%);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  transition: all var(--transition-normal) var(--easing-standard);
+  animation: slideUp var(--transition-normal) var(--easing-standard) both;
+  animation-delay: var(--delay, 0ms);
+  cursor: default;
+  position: relative;
+}
+
+.tech-tag:hover {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(14, 123, 78, 0.08) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(14, 123, 78, 0.1);
+}
+
+.tech-icon {
+  display: inline-block;
+  font-size: 1rem;
+  animation: spin 3s linear infinite;
+}
+
+.tech-tag:hover .tech-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-avatar {
+  width: 360px;
+  height: 360px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, var(--surface), rgba(250,250,250,0.6));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl);
+  animation: scaleIn var(--transition-slow) var(--easing-standard);
+  box-shadow: 0 22px 48px rgba(8, 14, 20, 0.08);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.hero-avatar:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 36px 80px rgba(8, 14, 20, 0.12);
+}
+
+.avatar-placeholder {
+  font-size: 100px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .hero-role {
+    font-size: var(--font-size-lg);
+  }
+
+  .hero-bio {
+    font-size: var(--font-size-base);
+  }
+
+  .hero-tech-stack {
+    border-top: 1px solid var(--border);
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .tech-tags {
+    gap: var(--space-sm);
+  }
+
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hero-avatar {
+    width: 260px;
+    height: 260px;
+    padding: var(--space-xl);
+  }
+
+  .avatar-placeholder {
+    font-size: 72px;
+  }
+
+  .hero-decoration-1 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ===== DARK MODE ===== */
+
+.dark .hero-avatar {
+  background: var(--gradient-subtle);
+  border-color: var(--border);
+  box-shadow: 0 20px 60px rgba(16, 185, 129, 0.1);
+}
+
+.dark .tech-tag {
+  background: linear-gradient(135deg, rgba(20, 30, 48, 0.8) 0%, rgba(30, 40, 60, 0.6) 100%);
+  border-color: var(--border);
+}
+
+.dark .tech-tag:hover {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(20, 30, 48, 0.9) 0%, rgba(14, 123, 78, 0.15) 100%);
+  box-shadow: 0 4px 12px rgba(14, 123, 78, 0.2);
+}
+
+.dark .hero-tech-stack {
+  border-top-color: var(--border);
+}

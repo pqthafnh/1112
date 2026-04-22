@@ -1,0 +1,52 @@
+/**
+ * Footer Component Styles
+ */
+
+.footer {
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  margin-top: var(--space-5xl);
+  transition: all var(--transition-normal) var(--easing-standard);
+}
+
+.footer-container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.footer-copyright {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.footer-built {
+  color: var(--text-tertiary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+}
+
+.footer-heart {
+  color: var(--primary);
+  animation: pulse 2s var(--easing-standard) infinite;
+  display: inline-block;
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    padding: var(--space-2xl) var(--container-padding-sm);
+  }
+}
+
+/* ===== DARK MODE ===== */
+
+.dark .footer {
+  background: var(--background);
+  border-top-color: var(--border);
+}

@@ -1,0 +1,198 @@
+/**
+ * Animation System
+ * Smooth, subtle animations that enhance UX without overwhelming
+ * All transitions use CSS variables for consistency
+ */
+
+/* ===== FADE ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ===== SLIDE ANIMATIONS ===== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===== SCALE ANIMATIONS ===== */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+/* ===== PULSE ANIMATIONS ===== */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(14, 123, 78, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(14, 123, 78, 0.6);
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.fade-in {
+  animation: fadeIn var(--transition-normal) var(--easing-standard) forwards;
+}
+
+.fade-out {
+  animation: fadeOut var(--transition-normal) var(--easing-standard) forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-normal) var(--easing-standard),
+              transform var(--transition-normal) var(--easing-standard);
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-down {
+  animation: slideDown var(--transition-normal) var(--easing-standard) forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft var(--transition-normal) var(--easing-standard) forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight var(--transition-normal) var(--easing-standard) forwards;
+}
+
+.scale-in {
+  animation: scaleIn var(--transition-normal) var(--easing-standard) forwards;
+}
+
+.pulse {
+  animation: pulse 2s var(--easing-standard) infinite;
+}
+
+.glow {
+  animation: glow 2s var(--easing-standard) infinite;
+}
+
+/* ===== HOVER & INTERACTION STATES ===== */
+
+.hover-scale {
+  transition: transform var(--transition-fast) var(--easing-standard);
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.hover-translate {
+  transition: transform var(--transition-fast) var(--easing-standard);
+}
+
+.hover-translate:hover {
+  transform: translateY(-4px);
+}
+
+.hover-shadow {
+  transition: box-shadow var(--transition-fast) var(--easing-standard);
+}
+
+.hover-shadow:hover {
+  box-shadow: var(--shadow-xl);
+}
+
+/* ===== SMOOTH SCROLL BEHAVIOR ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== FOCUS STATES ===== */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

@@ -1,0 +1,100 @@
+/**
+ * About Section Styles
+ */
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5xl);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-normal) var(--easing-standard),
+              transform var(--transition-normal) var(--easing-standard);
+}
+
+.about.visible .about-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-paragraph {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-loose);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-normal) var(--easing-standard),
+              transform var(--transition-normal) var(--easing-standard);
+  transition-delay: 100ms;
+}
+
+.about.visible .about-highlights {
+  opacity: 1;
+  transform: translateY(0);
+}
+  /* ===== highlight-item ===== */
+.highlight-item {
+  background: var(--surface);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: all var(--transition-normal) var(--easing-standard);
+}
+
+.highlight-item:hover {
+  color: #fff;;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.highlight-number {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: #ffffff;;
+  margin-bottom: var(--space-md);
+
+}
+
+.highlight-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: #ffffff83;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ===== DARK MODE ===== */
+
+.dark .highlight-item {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+.dark .highlight-item:hover {
+  border-color: var(--primary);
+}
